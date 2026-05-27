@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIRAgency — Brand & SMM Strategy</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+/* VIRAgency overrides */
+:root {
+  --gold:       #C4714A;
+  --gold-light: #D98B65;
+  --gold-dark:  #9A4F2F;
+  --bg-dark:    #18191E;
+  --bg-black:   #0F1A17;
+  --navy:       #1E2D2A;
+  --navy-mid:   #2D4A3E;
+}
+.cover { background: var(--bg-dark); }
+.cover::before { background: linear-gradient(135deg, transparent 40%, rgba(196,113,74,0.08) 100%); }
+.cover::after { background: rgba(196,113,74,0.3); }
+.dark-section { background: var(--bg-dark); }
+.audit-flag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 5px 12px; border-radius: 2px;
+  margin-bottom: 8px;
+}
+.flag-critical { background: rgba(196,74,74,0.12); color: #C44A4A; border: 1px solid rgba(196,74,74,0.3); }
+.flag-weak    { background: rgba(196,113,74,0.12); color: var(--gold-dark); border: 1px solid rgba(196,113,74,0.3); }
+.flag-strong  { background: rgba(45,74,62,0.12); color: #2D4A3E; border: 1px solid rgba(45,74,62,0.3); }
+.audit-item { padding: 24px 0; border-bottom: 1px solid var(--border); }
+.audit-item:last-child { border-bottom: none; }
+.audit-item h3 { font-family: var(--ff-display); font-size: 1.15rem; font-weight: 500; margin: 8px 0 8px; color: var(--ink); }
+.audit-item p { font-size: 0.85rem; color: var(--ink-3); line-height: 1.7; }
+.platform-priority {
+  display: flex; gap: 0; border: 1px solid var(--border);
+  border-radius: 2px; overflow: hidden; margin: 24px 0;
+}
+.pp-item {
+  flex: 1; padding: 20px 16px; border-right: 1px solid var(--border);
+  text-align: center;
+}
+.pp-item:last-child { border-right: none; }
+.pp-item.primary { background: var(--bg-dark); color: var(--ink-light); }
+.pp-rank { font-family: var(--ff-mono); font-size: 0.65rem; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 6px; }
+.pp-name { font-size: 0.9rem; font-weight: 600; }
+.pp-item.primary .pp-name { color: var(--ink-light); }
+.pp-note { font-size: 0.72rem; color: var(--ink-4); margin-top: 4px; }
+.pp-item.primary .pp-note { color: rgba(248,245,240,0.5); }
+/* Cover hero tweaks */
+.cover-title { font-size: clamp(4.2rem, 7vw, 6.8rem); }
+.cover-subtitle { color: rgba(248,245,240,0.36); }
+.cover-meta {
+  position: absolute;
+  bottom: 56px;
+  left: 80px;
+  right: 80px;
+  margin-bottom: 0;
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav">
+  <div class="nav-brand">VIRAgency<span> · </span>Strategy</div>
+  <ul class="nav-links">
+    <li><a href="#s00">Аудит</a></li>
+    <li><a href="#s02">Ринок</a></li>
+    <li><a href="#s05">Позиція</a></li>
+    <li><a href="#s07">Контент</a></li>
+    <li><a href="#s08">Платформи</a></li>
+    <li><a href="#s10">KPI</a></li>
+    <li><a href="#s12">Рекомендації</a></li>
+  </ul>
+  <a class="nav-pdf" href="#" onclick="window.print();return false;">Експорт PDF</a>
+</nav>
+
+<!-- COVER -->
+<section class="cover">
+  <div class="cover-number">VIRAgency — Brand &amp; SMM Strategy · 2025–2026</div>
+
+  <div class="cover-body">
+    <h1 class="cover-title">VIRAgency —<br><em>Brand &amp; SMM</em><br>Strategy</h1>
+    <p class="cover-subtitle">NGO Consulting · Ukraine · 2025–2026</p>
+    <p class="cover-subtitle" style="margin-top:16px; font-size:1rem; color:rgba(248,245,240,0.58); max-width: 720px;">Головна ціль: побудувати впізнаваний експертний бренд,<br>який генерує стабільний потік теплих лідів із соцмереж (Facebook + Instagram).</p>
+  </div>
+
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Бренд</span>
+      <span class="cover-meta-value">VIRAgency / Віра</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Ніша</span>
+      <span class="cover-meta-value">Консалтинг для ГО і БО · Україна</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Горизонт</span>
+      <span class="cover-meta-value">3–6 місяців</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Платформи</span>
+      <span class="cover-meta-value">Facebook, Instagram</span>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE OF CONTENTS -->
+<section class="toc">
+  <div class="toc-inner">
+    <div class="toc-label"><span>Зміст</span>Contents</div>
+    <div class="toc-grid">
+      <a class="toc-item" href="#s00"><span class="toc-num">00</span><span class="toc-name">Бренд-аудит</span></a>
+      <a class="toc-item" href="#s01"><span class="toc-num">01</span><span class="toc-name">Резюме</span></a>
+      <a class="toc-item" href="#s02"><span class="toc-num">02</span><span class="toc-name">Ринок</span></a>
+      <a class="toc-item" href="#s03"><span class="toc-num">03</span><span class="toc-name">Конкуренти</span></a>
+      <a class="toc-item" href="#s04"><span class="toc-num">04</span><span class="toc-name">Аудиторія</span></a>
+      <a class="toc-item" href="#s05"><span class="toc-num">05</span><span class="toc-name">"Вiра" — Позиціонування</span></a>
+      <a class="toc-item" href="#s06"><span class="toc-num">06</span><span class="toc-name">Наратив та стиль комунікації</span></a>
+      <a class="toc-item" href="#s07"><span class="toc-num">07</span><span class="toc-name">Контент-екосистема</span></a>
+      <a class="toc-item" href="#s08"><span class="toc-num">08</span><span class="toc-name">Стратегія для платформ</span></a>
+      <a class="toc-item" href="#s09"><span class="toc-num">09</span><span class="toc-name">Стратегія для команди</span></a>
+      <a class="toc-item" href="#s10"><span class="toc-num">10</span><span class="toc-name">KPI</span></a>
+      <a class="toc-item" href="#s11"><span class="toc-num">11</span><span class="toc-name">План оптимізації</span></a>
+      <a class="toc-item" href="#s12" style="grid-column: 2;"><span class="toc-num">12</span><span class="toc-name">Підсумкові рекомендації</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     00. БРЕНД-АУДИТ
+═══════════════════════════════════════════ -->
+<section id="s00" class="strategy-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-number">00</div>
+      <div>
+        <h2 class="section-title">Бренд-Аудит</h2>
+      </div>
+    </div>
+
+    <div class="grid-2 mt-40">
+      <div>
+        <span class="label">🔴 Критичні проблеми</span>
+
+        <div class="audit-item">
+          <h3>Контент не резонує з аудиторією</h3>
+          <p>Якщо контент не працює — це сигнал невідповідності теми болям аудиторії.</p>
+        </div>
+
+        <div class="audit-item">
+          <h3>Не до кінця пропрацьована візуальна ідентичність</h3>
+          <p>Немає єдиного шрифту, кольорової системи, стилю зображень. Відсутність цілісної візуальної айдентики = відсутність довіри. Аудиторія підсвідомо сприймає: "вони не можуть організувати власний бренд — як вони допоможуть нам?"</p>
+        </div>
+
+        <div class="audit-item">
+          <h3>Контент у форматі прес-релізу</h3>
+          <p>Занадто офіційний / бюрократичний тон = відстань. Для аудиторії з NGO сектору, де всі живуть місією і людськими стосунками, така мова — це миттєвий вимикач уваги. Кожен пост має звучати як лист від довіреного колеги, а не як анонс послуги.</p>
+        </div>
+      </div>
+
+      <div>
+        <span class="label">🟡 Слабкі місця</span>
+
+        <div class="audit-item">
+          <h3>Позиціонування не диференційоване</h3>
+          <p>"Партнери, не наставники" — хороший посил, але поки що лише декларація. Аудиторія не може відрізнити VIRAgency від будь-якої іншої консалтингової компанії. Потрібна конкретна, відчутна позиція.</p>
+        </div>
+
+        <div class="audit-item">
+          <h3>Назва "Вiра" — невикористаний золотий актив</h3>
+          <p>"Вiра" — одне з найемоційніших слів в українській мові. Це не просто абревіатура. Це бренд-концепція з глибоким резонансом: "Ми вiримо в потенціал кожної організації." Зараз це не використовується ніяк.</p>
+        </div>
+
+        <div class="audit-item">
+          <h3>Немає стратегії залучення аудиторії</h3>
+          <p>100+ підписників з дня запуску — хороший старт. Але без енгейджмент стратегії вони перетворяться на мертву аудиторію. Потрібні дописи, що провокують коментарі, питання, обговорення.</p>
+        </div>
+
+        <span class="label" style="display:block; margin-top:24px;">🟢 Сильні сторони</span>
+
+        <div class="audit-item">
+          <h3>Унікальна ніша з мінімальною конкуренцією</h3>
+          <p>Консалтинг для NGO в Україні з якісним соціальним контентом — практично ніхто не робить. Це синє море.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     01. РЕЗЮМЕ
+═══════════════════════════════════════════ -->
+<section id="s01" class="strategy-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-number">01</div>
+      <div>
+        <h2 class="section-title">Резюме</h2>
+        <p class="section-desc">Три трансформаційні пріоритети.</p>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-num">Трансформація 01</div>
+        <h3>Формуємо довіру</h3>
+        <p>Менше публікацій з переліками послуг. Починаємо розповідати про реальні ситуації, болі і трансформації клієнтів. ЦА купує довіру, а не опис послуги.</p>
+        <ul>
+          <li>80% контенту = storytelling + навчальний</li>
+          <li>20% = м'який продаж через демонстрацію результатів</li>
+          <li>Практично не даємо прямих рекламних постів у перші 60 днів</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-num">Трансформація 02</div>
+        <h3>"Вiра" як бренд-концепція</h3>
+        <p>Назва компанії — вже готове позиціонування бренду. Розбудувати весь контент навколо концепту вiри: в організацію, в команду, в місію. Це відрізнить VIRAgency від конкурента.</p>
+        <ul>
+          <li>Слоган: "Ми вiримо в потенціал вашої організації"</li>
+          <li>Контент = прояв цієї вiри через реальні кейси</li>
+          <li>Візуальна мова = тепла, людяна, не корпоративна</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-num">Трансформація 03</div>
+        <h3>Системність</h3>
+        <p>Фокус — два канали, один контент, системна присутність.</p>
+        <ul>
+          <li>Facebook і Instagram — єдина контент-система</li>
+          <li>2 пости на тиждень, публікація в обох одночасно</li>
+          <li>Stories — бажана щоденна присутність</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     02. РИНОК
+═══════════════════════════════════════════ -->
+<section id="s02" class="strategy-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-number">02</div>
+      <div>
+        <h2 class="section-title">Ринок</h2>
+        <p class="section-desc">Контекст NGO-сектору та запит аудиторії.</p>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-num">Реальні болі</div>
+        <h3>З чим стикається NGO-сектор</h3>
+        <ul>
+          <li>Вигорання команд</li>
+          <li>Хаос у процесах при побудові бізнесу та його масштабуванні</li>
+          <li>Відсутність системи</li>
+          <li>Звітність для донорів</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-num">Що шукає ЦА</div>
+        <h3>Запит аудиторії</h3>
+        <ul>
+          <li>Когось, хто розуміє їхній контекст</li>
+          <li>Практичні поради, не теорію</li>
+          <li>Підтримку без осуду</li>
+          <li>Результат, а не красиві звіти</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     03. КОНКУРЕНТИ
+═══════════════════════════════════════════ -->
+<section id="s03" class="strategy-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-number">03</div>
+      <div>
+        <h2 class="section-title">Конкуренти</h2>
+      </div>
+    </div>
+
+    <div class="insight">
+      <p>В Україні майже немає компаній, які б системно публікували якісний контент про операційний менеджмент для NGO людяною, партнерською мовою. Це і є синє море для VIRAgency.</p>
+    </div>
+
+    <div class="table-wrap mt-40">
+      <table class="premium-table">
+        <thead>
+          <tr>
+            <th>Тип конкурента</th>
+            <th>Що пропонує</th>
+            <th>Тон</th>
+            <th>Слабке місце</th>
+            <th>Перевага VIRAgency</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Грантові консультанти</strong></td>
+            <td>Допомога з заявками, звітністю</td>
+            <td>Технічний, сухий</td>
+            <td>Не вирішують управлінських проблем</td>
+            <td>Фокус на операційних системах і управлінні командами, не лише на грантах</td>
+          </tr>
+          <tr>
+            <td><strong>Міжнародні NGO-платформи</strong></td>
+            <td>Тренінги, інституційний розвиток</td>
+            <td>Формальний, англомовний</td>
+            <td>Не адаптовані до українських реалій</td>
+            <td>Своя, українська, завжди в контексті</td>
+          </tr>
+          <tr>
+            <td><strong>Загальний бізнес-консалтинг</strong></td>
+            <td>HR, стратегія, фінанси</td>
+            <td>Корпоративний, B2B</td>
+            <td>Не розуміють специфіку NGO-місій</td>
+            <td>Знання зсередини сектору</td>
+          </tr>
+          <tr>
+            <td><strong>NGO-спільноти</strong></td>
+            <td>Взаємопідтримка, обмін досвідом</td>
+            <td>Неформальний</td>
+            <td>Немає системного рішення</td>
+            <td>Структура + відповідальність + результат</td>
+          </tr>
+          <tr>
+            <td><strong>Індивідуальні коучі та тренери</strong></td>
+            <td>Особистий розвиток</td>
+            <td>Мотиваційний, "soft"</td>
+            <td>Бракує операційної глибини</td>
+            <td>Система + партнерство, 2 в 1</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     04. АУДИТОРІЯ
+═══════════════════════════════════════════ -->
+<section id="s04" class="strategy-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-number">04</div>
+      <div>
+        <h2 class="section-title">Аудиторія</h2>
+      </div>
+    </div>
+
+    <div class="insight">
+      <p>Керівники NGO не купують "консалтинг". Вони шукають людей, яким можна довірити найскладніше й найцінніше — власну організацію, власну команду, власну місію. Перед покупкою вони повинні вiрити.</p>
+    </div>
+
+    <div class="grid-2 mt-40">
+      <div class="card">
+        <div class="card-num">Основна ЦА — Пріоритет 1</div>
+        <h3>Керівник NGO / Фундатор організації</h3>
+        <ul>
+          <li><strong>Вік:</strong> 35–50, жінки / чоловіки</li>
+          <li><strong>Контекст:</strong> Заснували організацію з місії, тепер тонуть в операційному хаосі</li>
+          <li><strong>Головний біль:</strong> "Я роблю все сам/ма і не можу відпустити контроль"</li>
+          <li><strong>Страх:</strong> Зрадити місію заради "корпоративних" підходів</li>
+          <li><strong>Прихована фрустрація:</strong> Команда не розуміє, чому вони вигорають — а я теж</li>
+          <li><strong>Тригер довіри:</strong> "Вони говорять про мою ситуацію — значить, вони розуміють"</li>
+          <li><strong>Де читає:</strong> Facebook, Instagram</li>
+          <li><strong>Тригер до покупки:</strong> Чіткий кейс, схожий на його/її ситуацію + рекомендація колеги</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-num">Вторинна ЦА — Пріоритет 2</div>
+        <h3>HR / Операційні директори NGO</h3>
+        <ul>
+          <li><strong>Вік:</strong> 28–40</li>
+          <li><strong>Контекст:</strong> Відповідає за людей в організації, що росте</li>
+          <li><strong>Головний біль:</strong> Як утримати команду</li>
+          <li><strong>Страх:</strong> Що ключова людина піде і все впаде</li>
+          <li><strong>Прихована фрустрація:</strong> Я не маю нормальних інструментів — доводиться вигадувати</li>
+          <li><strong>Тригер довіри:</strong> Конкретний інструмент або шаблон, що реально працює</li>
+          <li><strong>Де читає:</strong> Instagram, Facebook</li>
+          <li><strong>Тригер до покупки:</strong> Практичний контент → "ці люди знають що роблять"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     05. "ВIРА" — ПОЗИЦІОНУВАННЯ
+═══════════════════════════════════════════ -->
+<section id="s05" class="strategy-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-number">05</div>
+      <div>
+        <h2 class="section-title">"Вiра" — стратегія позиціонування</h2>
+      </div>
+    </div>
+
+    <div class="insight">
+      <p>"Вiра" — це не просто абревіатура. Це слово, що несе в собі все, що шукає аудиторія: впевненість, підтримку, надію на краще. Інші консалтингові компанії не мають такого природного емоційного позиціонування.</p>
+    </div>
+
+    <div style="text-align:center; margin-top:48px; margin-bottom:28px;">
+      <span class="label">Три рівні значення "Вiри"</span>
+    </div>
+
+    <div class="grid-3">
+      <div class="pillar">
+        <h3>Вiра в організацію</h3>
+        <p>"Ми бачимо потенціал там, де ви бачите хаос"</p>
+      </div>
+      <div class="pillar">
+        <h3>Вiра в команду</h3>
+        <p>"Люди — головна сила"</p>
+      </div>
+      <div class="pillar">
+        <h3>Вiра в місію</h3>
+        <p>"Те, що ви будуєте — важливе і варте системної підтримки"</p>
+      </div>
+    </div>
+
+    <div class="card mt-32">
+      <div class="card-num">Ключове позиціонування бренду</div>
+      <p style="font-style:italic; font-family: var(--ff-display); font-size: 1.05rem; line-height:1.8;">"Для керівників громадських і благодійних організацій, що хочуть будувати стійкі структури без вигорання команд — VIRAgency є єдиним операційним партнером, що розуміє вашу місію зсередини і будує системи, які її захищають."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     06. НАРАТИВ ТА СТИЛЬ КОМУНІКАЦІЇ
+═══════════════════════════════════════════ -->
+<section id="s06" class="strategy-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-number">06</div>
+      <div>
+        <h2 class="section-title">Наратив та стиль комунікації</h2>
+      </div>
+    </div>
+
+    <!-- Архетип — темна підкладка -->
+    <div class="insight mt-40">
+      <div style="font-size:0.68rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:16px;">Архетип: Партнер, Союзник (Caregiver + Everyman)</div>
+      <p>Для VIRAgency правильний архетип — не "Мудрець" (він знає і навчає) і не "Правитель" (він контролює). Це <em>Союзник</em> — той, хто іде поруч, розуміє складність шляху і допомагає не зламатися.</p>
+      <p style="margin-top:16px; font-size:1rem; font-family:var(--ff-body); font-style:normal; color:rgba(248,245,240,0.6);">Аудиторія NGO-лідерів часто потребує підтримки. VIRAgency — це нарешті той, хто розуміє.</p>
+    </div>
+
+    <!-- Tone of Voice — 5 колонок в один рядок -->
+    <div class="framework mt-40">
+      <div class="framework-header">
+        <h3>Tone of Voice — 5 принципів</h3>
+      </div>
+      <div class="framework-body" style="grid-template-columns: repeat(5, 1fr);">
+        <div class="framework-col">
+          <div class="framework-col-title">01</div>
+          <strong style="font-size:0.82rem; color:var(--ink);">Щирий, а не офіційний</strong>
+          <p style="font-size:0.78rem; color:var(--ink-3); margin-top:8px; line-height:1.6;">говоримо як людина, не як інституція</p>
+        </div>
+        <div class="framework-col">
+          <div class="framework-col-title">02</div>
+          <strong style="font-size:0.82rem; color:var(--ink);">Конкретний, а не абстрактний</strong>
+          <p style="font-size:0.78rem; color:var(--ink-3); margin-top:8px; line-height:1.6;">"ось що ми зробили" не "ми надаємо різні послуги"</p>
+        </div>
+        <div class="framework-col">
+          <div class="framework-col-title">03</div>
+          <strong style="font-size:0.82rem; color:var(--ink);">Емпатичний, але не поблажливий</strong>
+          <p style="font-size:0.78rem; color:var(--ink-3); margin-top:8px; line-height:1.6;">розуміємо складність, не оцінюємо</p>
+        </div>
+        <div class="framework-col">
+          <div class="framework-col-title">04</div>
+          <strong style="font-size:0.82rem; color:var(--ink);">Впевнений, а не зарозумілий</strong>
+          <p style="font-size:0.78rem; color:var(--ink-3); margin-top:8px; line-height:1.6;">позиція є, але без "ми кращі за всіх"</p>
+        </div>
+        <div class="framework-col">
+          <div class="framework-col-title">05</div>
+          <strong style="font-size:0.82rem; color:var(--ink);">Практичний, але не академічний</strong>
+          <p style="font-size:0.78rem; color:var(--ink-3); margin-top:8px; line-height:1.6;">кожна ідея має прикладне значення</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Приклади тону -->
+    <div class="grid-2 mt-32">
+      <div class="card">
+        <h3><span style="color:#4A9A6A;">✓</span> Приклади правильного тону</h3>
+        <ul>
+          <li>"Питання, яке змінює все на першій зустрічі з клієнтом"</li>
+          <li>"Чому вигорають не слабкі люди, а найвідданіші"</li>
+          <li>"Три ознаки, що організація росте, але ламається"</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><span style="color:#C44A4A;">✗</span> Приклади неправильного тону</h3>
+        <ul>
+          <li>"Компанія VIRAgency рада повідомити про запуск нової послуги…"</li>
+          <li>"Наша команда висококваліфікованих фахівців…"</li>
+          <li>"Звертайтесь до нас за якісними послугами консалтингу"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     07. КОНТЕНТ-ЕКОСИСТЕМА
+═══════════════════════════════════════════ -->
+<section id="s07" class="strategy-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-number">07</div>
+      <div>
+        <h2 class="section-title">Контент-Екосистема</h2>
+      </div>
+    </div>
+
+    <div class="grid-3" style="gap:16px;">
+      <div class="pillar">
+
+        <h3>Вигорання і стійкість</h3>
+        <p>Найгарячіша тема NGO-сектору. Контент про те, чому вигорають найкращі люди, як це розпізнати і що робити. Це не зовсім мотиваційний контент — це більш аналітична розмова про системну проблему.</p>
+      </div>
+      <div class="pillar">
+
+        <h3>Операційні системи</h3>
+        <p>Практичний контент: напр., як побудувати процеси, що тримають організацію без "незамінних" людей. Демонструємо експертизу через реальну цінність.</p>
+      </div>
+      <div class="pillar">
+
+        <h3>Реальні кейси</h3>
+        <p>Трансформаційні історії клієнтів: де вони були, що ми зробили, де вони зараз. Без імен, якщо потрібно — але з конкретними деталями і результатами.</p>
+      </div>
+      <div class="pillar">
+
+        <h3>Команда</h3>
+        <p>Хто стоїть за VIRAgency. Як команда думає, що їх надихає, які помилки вони робили. Найпотужніший будівельник довіри для аудиторії.</p>
+      </div>
+      <div class="pillar">
+
+        <h3>Непопулярні думки</h3>
+        <p>Провокаційний, але аргументований погляд на NGO-сектор. Напр., "Чому більшість програм не працюють", "Грант — це не порятунок". Контент, що розходиться і залучає нову аудиторію.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     08. СТРАТЕГІЯ ДЛЯ ПЛАТФОРМ
+═══════════════════════════════════════════ -->
+<section id="s08" class="strategy-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-number">08</div>
+      <div>
+        <h2 class="section-title">Стратегія для платформ</h2>
+      </div>
+    </div>
+
+    <!-- FACEBOOK -->
+    <div class="framework mt-40">
+      <div class="framework-header">
+        <h3>Facebook</h3>
+      </div>
+      <div style="padding: 24px 32px; border-top: 1px solid var(--border);">
+        <ol style="padding-left: 1.4em; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+          <li style="font-size: 0.88rem; color: var(--ink-2); line-height: 1.6;"><strong>Сторінка VIRAgency:</strong> системний контент за планом</li>
+          <li style="font-size: 0.88rem; color: var(--ink-2); line-height: 1.6;"><strong>Особисті профілі команди:</strong> репости + коментарі</li>
+          <li style="font-size: 0.88rem; color: var(--ink-2); line-height: 1.6;"><strong>Участь у спільнотах</strong></li>
+        </ol>
+      </div>
+      <div class="framework-body" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="framework-col">
+          <div class="framework-col-title">Формати</div>
+          <ul>
+            <li>Текстові пости</li>
+            <li>Каруселі</li>
+            <li>Відео нативне</li>
+            <li>Питання-пости для коментарів</li>
+          </ul>
+        </div>
+        <div class="framework-col">
+          <div class="framework-col-title">Структура тексту</div>
+          <ul>
+            <li>Перший рядок = гачок</li>
+            <li>Далі: ситуація → інсайт → практика</li>
+            <li>Фінал: питання або м'який CTA</li>
+            <li>Абзаци по 1-3 рядки (читабельність)</li>
+          </ul>
+        </div>
+        <div class="framework-col">
+          <div class="framework-col-title">Щодо спільнот</div>
+          <ul>
+            <li>За можливості, знайти 5-10 активних груп, де бере участь ЦА</li>
+            <li>Тиждень 1-2: коментувати, щоб стати активним учасником спільноти і "світити" сторінку</li>
+            <li>Тиждень 3+: можна починати ділитися контентом, що має цінність, або ж продовжувати просто коментувати/відповідати на питання/ділитися досвідом</li>
+            <li>"Ззвертайтесь до нас" без контексту — не вживаємо</li>
+          </ul>
+        </div>
+        <div class="framework-col">
+          <div class="framework-col-title">Тактики залучення</div>
+          <ul>
+            <li>Закінчувати пост питанням до аудиторії</li>
+            <li>Реагувати на кожен коментар (перші 2 год)</li>
+            <li>Можна ділитися на інших релевантних сторінках</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- INSTAGRAM -->
+    <div class="insight mt-40">
+      <p>100+ підписників на старті — хороший актив. Але вони прийшли раніше, ніж з'явився якісний контент. Перше завдання: повернути цю аудиторію та показати їм нове обличчя бренду.</p>
+    </div>
+
+    <div class="framework mt-32">
+      <div class="framework-header">
+        <h3>Instagram</h3>
+        <span class="framework-tag">@vira_gency</span>
+      </div>
+      <div class="framework-body" style="grid-template-columns: repeat(2, 1fr);">
+        <div class="framework-col">
+          <div class="framework-col-title">Оптимізувати профіль</div>
+          <ul>
+            <li><strong>Головне фото і загальна айдентика:</strong> оновлюємо до актуальних, тих, що будуть з нами назавжди — чимскоріше</li>
+            <li><strong>Ім'я:</strong> VIRAgency | Операційний консалтинг</li>
+            <li><strong>Bio:</strong> Допомагаємо NGO будувати стійкі команди і процеси 🌱 Партнери, а не наставники ↓ Консультація — у дірект</li>
+            <li><strong>Highlights:</strong> Теж повністю змінюємо. Кейси / Послуги / Корисне / FAQ / Відгуки</li>
+          </ul>
+        </div>
+        <div class="framework-col">
+          <div class="framework-col-title">Контент</div>
+          <ul>
+            <li><strong>35% Reels:</strong> короткі відео — команда, інсайти</li>
+            <li><strong>35% Каруселі:</strong> робочі моделі, поради, before/after кейси</li>
+            <li><strong>20% Статичні пости:</strong> цитати, ключові думки</li>
+            <li><strong>10% Stories (бажано щодня):</strong> запитання, опитування, реакції, внутрішні процеси</li>
+          </ul>
+          <p style="margin-top:12px; font-size:0.78rem; color:var(--ink-3); font-style:italic;">Чому stories щодня? Це підтримує алгоритм і формує звичку у аудиторії перевіряти ваш профіль + коли потенційний клієнт його відвідає, він відразу зрозуміє, що акаунт живий.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="framework mt-32">
+      <div class="framework-header">
+        <h3>Ключові формати</h3>
+      </div>
+      <div class="framework-body" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="framework-col">
+          <div class="framework-col-title">Reels</div>
+          <p style="font-size:0.82rem; color:var(--ink-2); line-height:1.6;">Talking head: телефон на штативі, хороше освітлення, конкретна думка на 30-60 секунд. Перші 3 секунди = гачок. Субтитри обов'язково.</p>
+        </div>
+        <div class="framework-col">
+          <div class="framework-col-title">Каруселі</div>
+          <p style="font-size:0.82rem; color:var(--ink-2); line-height:1.6;">Перший слайд має бути настільки цікавим, щоб аудиторія свайпала.</p>
+        </div>
+        <div class="framework-col">
+          <div class="framework-col-title">Stories</div>
+          <p style="font-size:0.82rem; color:var(--ink-2); line-height:1.6;">Репост корисних матеріалів з коментарем, питання до підписників, факт чи інсайт дня з NGO-сектору, залаштунки. Декілька stories на день = активний аккаунт без великих зусиль.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     09. СТРАТЕГІЯ ДЛЯ КОМАНДИ
+═══════════════════════════════════════════ -->
+<section id="s09" class="strategy-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-number">09</div>
+      <div>
+        <h2 class="section-title">Стратегія для команди</h2>
+      </div>
+    </div>
+
+    <div class="insight">
+      <p>Для нашої ЦА особливо важливо: "Хто ці люди? Чи вони розуміють мій світ?" Особистий контент команди відповідає на це питання швидше за будь-який опис послуг.</p>
+    </div>
+
+    <div class="grid-2 mt-40">
+      <div class="card">
+        <div class="card-num">Орієнтовні теми для команди — про що говорити особисто</div>
+        <ul>
+          <li>"Чому я почала\в займатися NGO-консалтингом"</li>
+          <li>"Найскладніший клієнт\кейс: що це навчило мене"</li>
+          <li>"Питання, яке я ставлю собі перед кожним проєктом"</li>
+          <li>"Чого не можна вирішити консалтингом"</li>
+          <li>"Наша внутрішня помилка, що вартувала нам…"</li>
+          <li>"Чому я вiрю, що кожна організація може бути сильнішою"</li>
+          <li>"Ось що ми не беремо в роботу і чому"</li>
+          <li>Особиста рефлексія</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-num">Формат і подача — як говорити, щоб чули</div>
+        <ul>
+          <li><strong>Перша особа завжди:</strong> "Я", "ми" — ніколи "компанія VIRAgency вважає"</li>
+          <li><strong>Конкретна ситуація:</strong> Де, коли, що саме відбулося</li>
+          <li><strong>Реальна емоція:</strong> Що ви відчули — не лише що думали</li>
+          <li><strong>Урок:</strong> Що це змінило у вашому підході</li>
+          <li><strong>Питання:</strong> Запросити аудиторію поділитися своїм досвідом</li>
+        </ul>
+        <p style="margin-top:16px;font-size:0.82rem;color:var(--ink-3);">Мінімум 1 особиста комунікація на тиждень — обов'язковий компонент стратегії.</p>
+      </div>
+    </div>
+
+    <div class="card mt-64">
+      <div class="card-num">Як ще можна будувати впізнаваність?</div>
+      <ul>
+        <li><strong>1 — Власна методологія.</strong> Це міг би бути ще один стовп, на основі якого можна будувати комунікацію.</li>
+        <li><strong>2 — Виступи на заходах.</strong> Конференції, форуми, онлайн-вебінари. Почати з безкоштовних виступів → будувати репутацію → стати обов'язковим спікером = значне прискорення впізнаваності бренду.</li>
+        <li><strong>3 — Безкоштовні вебінари.</strong> Щомісяця: 45-хвилинний безкоштовний вебінар щодо конкретної NGO-проблеми. Реєстрація = email. Після вебінару: повторний контакт + м'яка пропозиція консультації. Розраховуємо на конверсію 5-15%.</li>
+        <li><strong>4 — Медіа.</strong> Давати коментарі журналістам. Одна публікація/згадка = більше довіри/впізнаваності, ніж 10 дописів.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     10. KPI
+═══════════════════════════════════════════ -->
+<section id="s10" class="strategy-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-number">10</div>
+      <div>
+        <h2 class="section-title">KPI</h2>
+      </div>
+    </div>
+
+    <div class="insight">
+      <p>Метрики, прив'язані до реальної цілі VIRAgency — стабільний потік теплих лідів з Instagram і Facebook. Що вимірювати, а що ігнорувати.</p>
+    </div>
+
+    <div class="kpi-group mt-40">
+      <div class="kpi-group-title">Основні KPIs</div>
+      <div class="kpi-row">
+        <div class="kpi-name">Нові запити з соцмереж / міс</div>
+        <div class="kpi-desc">Кількість людей, що написали в DM або залишили коментар з проханням про консультацію.</div>
+        <div class="kpi-target">Місяць 1–2: 2–5<br>Місяць 3–6: 8–15</div>
+      </div>
+      <div class="kpi-row">
+        <div class="kpi-name">Консультація / місяць</div>
+        <div class="kpi-desc">Кількість безкоштовних перших зустрічей з потенційними клієнтами.</div>
+        <div class="kpi-target">Місяць 3: 3–5/міс</div>
+      </div>
+      <div class="kpi-row">
+        <div class="kpi-name">Дохід з соцмереж</div>
+        <div class="kpi-desc">Скільки гривень зароблено від клієнтів, що прийшли через соціальні мережі.</div>
+        <div class="kpi-target">Зростаючий тренд щомісяця</div>
+      </div>
+      <div class="kpi-row">
+        <div class="kpi-name">Підписники</div>
+        <div class="kpi-desc">Теплі підписники — потенційні клієнти.</div>
+        <div class="kpi-target">+20–80/місяць</div>
+      </div>
+    </div>
+
+    <div class="kpi-group mt-40">
+      <div class="kpi-group-title">Вторинні KPIs</div>
+      <div class="kpi-row">
+        <div class="kpi-name">Збереження + поширення постів</div>
+        <div class="kpi-desc">Якість контенту. Зберігають = вважають корисним. Шерять = вважають важливим для інших.</div>
+        <div class="kpi-target">&gt;5% від охоплення кожного посту</div>
+      </div>
+      <div class="kpi-row">
+        <div class="kpi-name">Якісні коментарі</div>
+        <div class="kpi-desc">Розгорнуті коментарі від цільової аудиторії.</div>
+        <div class="kpi-target">3+ якісних коментарів/пост</div>
+      </div>
+      <div class="kpi-row">
+        <div class="kpi-name">Активність у інших спільнотах</div>
+        <div class="kpi-desc">Скільки реакцій отримують дописи/коментарі агенції, команди.</div>
+        <div class="kpi-target">Активна присутність у 5+ групах</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     11. ПЛАН ОПТИМІЗАЦІЇ
+═══════════════════════════════════════════ -->
+<section id="s11" class="strategy-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-number">11</div>
+      <div>
+        <h2 class="section-title">План оптимізації стратегії</h2>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-num">Тижневий огляд</div>
+        <ul>
+          <li><strong>Топ-допис тижня:</strong> Чому спрацював? Тема, тон, формат?</li>
+          <li><strong>Найслабший допис:</strong> Гачок? Платформа? Час публікації?</li>
+          <li><strong>Нові запити:</strong> Скільки? Звідки? Яка тема привела?</li>
+          <li><strong>Коментарі\Запити в дірект:</strong> Які питання ставлять?</li>
+          <li><strong>Facebook спільноти:</strong> Який результат?</li>
+          <li><strong>Наступний тиждень:</strong> Адаптувати план на основі даних</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-num">Місячний огляд</div>
+        <ul>
+          <li><strong>Дохід:</strong> Скільки заробили з соцмереж? Який тренд?</li>
+          <li><strong>Контент:</strong> Який напрям\тема найефективніші?</li>
+          <li><strong>Платформи:</strong> Facebook vs Instagram — де більше запитів?</li>
+          <li><strong>Аудиторія:</strong> ЦА чи ні?</li>
+          <li><strong>Позиціонування:</strong> Чи є запити з "неправильними" очікуваннями?</li>
+          <li><strong>Наступний місяць:</strong> Переглянути контент-план, додати нові теми</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     12. ПІДСУМКОВІ РЕКОМЕНДАЦІЇ
+═══════════════════════════════════════════ -->
+<section id="s12" class="strategy-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-number">12</div>
+      <div>
+        <h2 class="section-title">Підсумкові рекомендації</h2>
+      </div>
+    </div>
+
+    <div class="rec">
+      <div class="rec-num">01</div>
+      <div>
+        <span class="rec-priority critical">Тиждень 1</span>
+        <h3>Повністю змінити тон контенту</h3>
+        <p>Переключитися на першу особу, конкретні ситуації і реальні емоції. Не "компанія VIRAgency надає" — а "ми прийшли до організації і побачили…"</p>
+      </div>
+    </div>
+
+    <div class="rec">
+      <div class="rec-num">02</div>
+      <div>
+        <span class="rec-priority critical">Тиждень 1</span>
+        <h3>Налаштувати базову візуальну айдентику і ніколи не відступати</h3>
+        <p>Без візуальної консистентності бренд втрачає позиціонування.</p>
+      </div>
+    </div>
+
+    <div class="rec">
+      <div class="rec-num">03</div>
+      <div>
+        <span class="rec-priority critical">Тиждень 1-2</span>
+        <h3>Оновити bio і highlights в Instagram</h3>
+      </div>
+    </div>
+
+    <div class="rec">
+      <div class="rec-num">04</div>
+      <div>
+        <span class="rec-priority high">Тиждень 1-2</span>
+        <h3>Приєднатися до 5 релевантних Facebook-груп і стати активним учасником</h3>
+        <p>Це найшвидший шлях до цільової аудиторії без бюджету на рекламу. Тиждень 1-2: тільки корисні коментарі. Тиждень 3+: якщо доцільно - ділитися власним контентом.</p>
+      </div>
+    </div>
+
+    <div class="rec">
+      <div class="rec-num">05</div>
+      <div>
+        <span class="rec-priority high">Місяць 1</span>
+        <h3>Розбудувати бренд навколо концепту "Вiра"</h3>
+      </div>
+    </div>
+
+    <div class="rec">
+      <div class="rec-num">06</div>
+      <div>
+        <span class="rec-priority high">Місяць 1</span>
+        <h3>Можна запропонувати безкоштовний корисний матеріал для залучення лідів (якщо будемо таке практикувати)</h3>
+        <p>Напр., практичний чеклист. Допис з "напишіть СЛОВО" → автоматична доставка → збір контактів. Перші 50 контактів = перший теплий список.</p>
+      </div>
+    </div>
+
+    <div class="rec">
+      <div class="rec-num">07</div>
+      <div>
+        <span class="rec-priority high">Місяць 1-2</span>
+        <h3>Провести перший безкоштовний вебінар і зібрати список теплих контактів</h3>
+      </div>
+    </div>
+
+    <div class="rec">
+      <div class="rec-num">08</div>
+      <div>
+        <span class="rec-priority high">Постійно</span>
+        <h3>Публікувати мінімум 1 кейс на місяць</h3>
+        <p>Конкретні ситуації з реальними результатами — найпотужніший інструмент конверсії. ЦА впізнає свою ситуацію і пише в дірект.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">VIRAgency · Brand &amp; SMM Strategy</div>
+  <div class="footer-meta">
+    Консалтинг для ГО і БО · Україна · 2025–2026<br>
+    Ціль: впізнаваний бренд і стабільний потік теплих лідів
+  </div>
+</footer>
+
+</body>
+</html>
