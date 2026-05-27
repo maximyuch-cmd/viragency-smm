@@ -58,6 +58,34 @@
   right: 80px;
   margin-bottom: 0;
 }
+
+/* ── Print / PDF ──────────────────────────────────────── */
+@media print {
+  /* Сховати навігацію */
+  .nav { display: none !important; }
+
+  /* Поля сторінки */
+  @page { margin: 14mm 16mm; }
+
+  /* Кожна секція — з нової сторінки */
+  .cover       { page-break-after: always; min-height: auto; }
+  .toc         { page-break-after: always; }
+  .strategy-section { page-break-before: always; }
+
+  /* Не розривати всередині блоків */
+  .card, .pillar, .rec, .audit-item,
+  .kpi-row, .insight, .framework,
+  .framework-body, .grid-2, .grid-3 {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Зберегти кольори фону */
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
 </style>
 </head>
 <body>
