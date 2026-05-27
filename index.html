@@ -48,6 +48,9 @@
 .pp-item.primary .pp-name { color: var(--ink-light); }
 .pp-note { font-size: 0.72rem; color: var(--ink-4); margin-top: 4px; }
 .pp-item.primary .pp-note { color: rgba(248,245,240,0.5); }
+/* Bullet замість дефісу у всіх card-списках */
+.card ul li::before { content: '•'; font-size: 0.55rem; margin-top: 3px; }
+
 /* Clean lists — без дефісів, вирівнювання по лівому краю */
 .clean-list li::before { display: none !important; content: none !important; }
 .clean-list li {
