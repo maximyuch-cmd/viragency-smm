@@ -59,6 +59,86 @@
   margin-bottom: 0;
 }
 
+/* ── Mobile ───────────────────────────────────────────── */
+@media (max-width: 600px) {
+  /* Nav */
+  .nav { padding: 0 20px; height: 52px; }
+  .nav-links { display: none; }
+  .nav-pdf { font-size: 0.62rem; padding: 6px 12px; }
+
+  /* Cover */
+  .cover { padding: 70px 24px 120px; }
+  .cover-number { left: 24px; font-size: 0.68rem; top: 68px; }
+  .cover-title { font-size: clamp(2.6rem, 11vw, 3.4rem) !important; line-height: 1.0; }
+  .cover-subtitle { font-size: 0.88rem !important; max-width: 100% !important; }
+  .cover-body { padding: 24px 0 16px; }
+  .cover-meta {
+    position: static !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 24px;
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-dark);
+  }
+  .cover-meta-value { font-size: 0.88rem; }
+
+  /* TOC */
+  .toc { padding: 40px 24px; }
+  .toc-inner { gap: 24px; }
+  .toc-label { font-size: 1.8rem; }
+  .toc-item { padding: 12px 0; }
+  .toc-item[style*="grid-column"] { grid-column: auto !important; }
+
+  /* Sections */
+  .strategy-section { padding: 40px 20px; }
+  .section-inner { max-width: 100%; }
+  .section-number { font-size: 1.8rem; }
+  .section-title { font-size: 1.6rem; }
+
+  /* Grids — single column */
+  .grid-2, .grid-3 { grid-template-columns: 1fr !important; gap: 16px; }
+
+  /* Framework — stack all columns */
+  .framework-body {
+    grid-template-columns: 1fr !important;
+  }
+  .framework-col {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border);
+    padding: 20px;
+  }
+  .framework-col:last-child { border-bottom: none; }
+  .framework-header { padding: 16px 20px; }
+
+  /* Platform priority — stack */
+  .platform-priority { flex-direction: column; }
+  .pp-item { border-right: none !important; border-bottom: 1px solid var(--border-dark); }
+  .pp-item:last-child { border-bottom: none; }
+
+  /* Insight */
+  .insight { padding: 24px 20px; margin: 32px 0; }
+  .insight p { font-size: 1.1rem; }
+
+  /* Cards */
+  .card { padding: 20px; }
+
+  /* KPI */
+  .kpi-row { grid-template-columns: 1fr; gap: 6px; padding: 14px 0; }
+  .kpi-target { text-align: left; }
+
+  /* Rec */
+  .rec { grid-template-columns: 40px 1fr; gap: 16px; }
+  .rec-num { font-size: 1.8rem; }
+
+  /* Table — scroll horizontally */
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .premium-table { min-width: 560px; }
+
+  /* Footer */
+  .footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 20px; }
+}
+
 /* ── Print / PDF ──────────────────────────────────────── */
 @media print {
   /* Сховати навігацію */
